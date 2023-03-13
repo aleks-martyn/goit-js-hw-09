@@ -4,6 +4,7 @@ const stopBtnEl = document.querySelector('button[data-stop]');
 let timerId = null;
 
 startBtnEl.addEventListener('click', handleStartBtnClick);
+stopBtnEl.addEventListener('click', handleStopBtnClick);
 
 function handleStartBtnClick(event) {
     timerId = setInterval(timerHandler, 1000);
@@ -13,8 +14,6 @@ function handleStartBtnClick(event) {
 function timerHandler() {
     bodyEl.style.backgroundColor = getRandomHexColor();
 }
-
-stopBtnEl.addEventListener('click', handleStopBtnClick);
 
 function handleStopBtnClick() {
     clearInterval(timerId);
