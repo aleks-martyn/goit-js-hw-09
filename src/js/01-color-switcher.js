@@ -8,6 +8,7 @@ stopBtnEl.addEventListener('click', handleStopBtnClick);
 
 function handleStartBtnClick(event) {
     timerId = setInterval(timerHandler, 1000);
+    event.target.setAttribute('disabled', 'true');
     console.log(event.target);
 }
 
