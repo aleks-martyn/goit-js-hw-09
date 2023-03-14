@@ -15,3 +15,8 @@ const options = {
 };
 
 flatpickr(inputEl, options);
+
+const date = Date.now();
+console.log(date);
+
+
