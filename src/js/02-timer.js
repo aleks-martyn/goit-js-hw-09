@@ -19,7 +19,6 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
     futureDate = selectedDates[0].getTime();
-    console.log(futureDate);
     if (futureDate - date > 0) {
       buttonEl.removeAttribute('disabled');
     } else {
@@ -38,9 +37,12 @@ function handleBtnClick() {
 
 function timerHandler() {
   const date = Date.now();
-  console.log(futureDate);
-  console.log(date);
-  console.log(convertMs(date));
+  const sub = futureDate - date;
+  const timingObject = convertMs(sub);
+  daysField.textContent = timingObject.days;
+  hoursField.textContent = timingObject.hours;
+  minutesField.textContent = timingObject.minutes;
+  secondsField.textContent = timingObject.seconds;
 }
 
 function convertMs(ms) {
@@ -61,6 +63,3 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
-const timingObject = convertMs(10000);
-console.log(timingObject.seconds);
-secondsField.textContent = timingObject.seconds;
