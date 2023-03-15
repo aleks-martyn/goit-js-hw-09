@@ -32,7 +32,7 @@ flatpickr(inputEl, options);
 buttonEl.addEventListener('click', handleBtnClick);
 
 function handleBtnClick() {
-  setInterval(timerHandler, 1000);
+  timerId = setInterval(timerHandler, 1000);
 }
 
 function timerHandler() {
