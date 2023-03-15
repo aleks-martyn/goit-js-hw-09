@@ -7,7 +7,7 @@ const daysField = document.querySelector('span[data-days]');
 const hoursField = document.querySelector('span[data-hours]');
 const minutesField = document.querySelector('span[data-minutes]');
 const secondsField = document.querySelector('span[data-seconds]');
-const date = Date.now();
+const startDate = Date.now();
 let futureDate = 0;
 buttonEl.setAttribute('disabled', 'true');
 
@@ -19,7 +19,7 @@ const options = {
   onClose(selectedDates) {
     console.log(selectedDates[0]);
     futureDate = selectedDates[0].getTime();
-    if (futureDate - date > 0) {
+    if (futureDate - startDate > 1000) {
       buttonEl.removeAttribute('disabled');
     } else {
       alert('Please choose a date in the future');
@@ -37,8 +37,8 @@ function handleBtnClick(event) {
 }
 
 function timerHandler() {
-  const date = Date.now();
-  const sub = futureDate - date;
+  const currentTime = Date.now();
+  const sub = futureDate - currentTime;
   if (sub < 1000) { clearInterval(timerId); }
   const timingObject = convertMs(sub);
   daysField.textContent = timingObject.days;
