@@ -31,8 +31,9 @@ flatpickr(inputEl, options);
 
 buttonEl.addEventListener('click', handleBtnClick);
 
-function handleBtnClick() {
+function handleBtnClick(event) {
   timerId = setInterval(timerHandler, 1000);
+  event.target.setAttribute('disabled', 'true');
 }
 
 function timerHandler() {
