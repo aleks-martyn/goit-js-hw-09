@@ -39,6 +39,7 @@ function handleBtnClick(event) {
 function timerHandler() {
   const date = Date.now();
   const sub = futureDate - date;
+  if (sub < 1000) { clearInterval(timerId); }
   const timingObject = convertMs(sub);
   daysField.textContent = timingObject.days;
   hoursField.textContent = timingObject.hours;
