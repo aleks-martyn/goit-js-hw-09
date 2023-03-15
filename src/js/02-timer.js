@@ -8,7 +8,7 @@ const hoursField = document.querySelector('span[data-hours]');
 const minutesField = document.querySelector('span[data-minutes]');
 const secondsField = document.querySelector('span[data-seconds]');
 const date = Date.now();
-let futureDate = null;
+let futureDate = 0;
 buttonEl.setAttribute('disabled', 'true');
 
 const options = {
@@ -38,6 +38,7 @@ function handleBtnClick() {
 
 function timerHandler() {
   const date = Date.now();
+  console.log(futureDate);
   console.log(date);
   console.log(convertMs(date));
 }
@@ -60,3 +61,6 @@ function convertMs(ms) {
 
   return { days, hours, minutes, seconds };
 }
+const timingObject = convertMs(10000);
+console.log(timingObject.seconds);
+secondsField.textContent = timingObject.seconds;
