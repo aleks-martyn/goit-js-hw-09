@@ -7,6 +7,7 @@ const daysField = document.querySelector('span[data-days]');
 const hoursField = document.querySelector('span[data-hours]');
 const minutesField = document.querySelector('span[data-minutes]');
 const secondsField = document.querySelector('span[data-seconds]');
+const date = Date.now();
 let futureDate = null;
 buttonEl.setAttribute('disabled', 'true');
 
@@ -29,9 +30,6 @@ const options = {
 
 flatpickr(inputEl, options);
 
-const date = Date.now();
-console.log(date);
-
 buttonEl.addEventListener('click', handleBtnClick);
 
 function handleBtnClick() {
@@ -39,9 +37,9 @@ function handleBtnClick() {
 }
 
 function timerHandler() {
-  const date1 = Date.now();
-  console.log(date1);
- // convertMs(ms);
+  const date = Date.now();
+  console.log(date);
+  console.log(convertMs(date));
 }
 
 function convertMs(ms) {
