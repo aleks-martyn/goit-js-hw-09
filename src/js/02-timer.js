@@ -89,6 +89,6 @@ fieldEls.forEach(fieldEl => {
   fieldEl.style.alignItems = 'center';
 });
 
-valueEls.forEach((valueEl) => {
+valueEls.forEach(valueEl => {
   valueEl.style.fontSize = '30px';
 });
