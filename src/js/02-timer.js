@@ -77,6 +77,7 @@ function addLeadingZero(value) {
 
 const timerEl = document.querySelector('.timer');
 const fieldEls = document.querySelectorAll('.field');
+const valueEls = document.querySelectorAll('.value');
 
 timerEl.style.marginTop = '20px';
 timerEl.style.display = 'flex';
@@ -86,4 +87,8 @@ fieldEls.forEach(fieldEl => {
   fieldEl.style.display = 'flex';
   fieldEl.style.flexDirection = 'column';
   fieldEl.style.alignItems = 'center';
+});
+
+valueEls.forEach((valueEl) => {
+  valueEl.style.fontSize = '30px';
 });
