@@ -64,7 +64,9 @@ function convertMs(ms) {
   // Remaining minutes
   const minutes = addLeadingZero(Math.floor(((ms % day) % hour) / minute));
   // Remaining seconds
-  const seconds = addLeadingZero(Math.floor((((ms % day) % hour) % minute) / second));
+  const seconds = addLeadingZero(
+    Math.floor((((ms % day) % hour) % minute) / second)
+  );
 
   return { days, hours, minutes, seconds };
 }
@@ -72,3 +74,16 @@ function convertMs(ms) {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+
+const timerEl = document.querySelector('.timer');
+const fieldEls = document.querySelectorAll('.field');
+
+timerEl.style.marginTop = '20px';
+timerEl.style.display = 'flex';
+timerEl.style.gap = '10px';
+
+fieldEls.forEach(fieldEl => {
+  fieldEl.style.display = 'flex';
+  fieldEl.style.flexDirection = 'column';
+  fieldEl.style.alignItems = 'center';
+});
