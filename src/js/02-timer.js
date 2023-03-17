@@ -35,6 +35,7 @@ buttonEl.addEventListener('click', handleBtnClick);
 
 function handleBtnClick(event) {
   timerId = setInterval(timerHandler, 1000);
+  console.log(timerId);
   event.target.setAttribute('disabled', 'true');
 }
 
