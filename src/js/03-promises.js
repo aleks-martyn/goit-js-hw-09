@@ -2,6 +2,7 @@ const formEl = document.querySelector('.form');
 const delayEl = document.querySelector('input[name="delay"]');
 const stepEl = document.querySelector('input[name="step"]');
 const amountEl = document.querySelector('input[name="amount"]');
+console.log(delayEl.value);
 
 formEl.addEventListener('submit', handleSubmit);
 
@@ -25,10 +26,10 @@ function createPromise(position, delay) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (shouldResolve) {
-        // Fulfill
+        resolve({ position, delay });
       } else {
-        // Reject
+        reject({ position, delay });
       }
-    }, delay.value);
+    }, delay);
   });
 }
