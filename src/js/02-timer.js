@@ -10,7 +10,7 @@ const minutesField = document.querySelector('span[data-minutes]');
 const secondsField = document.querySelector('span[data-seconds]');
 const startDate = Date.now();
 let futureDate = 0;
-let timerId = null;
+let timerId = 0;
 
 buttonEl.setAttribute('disabled', 'true');
 
