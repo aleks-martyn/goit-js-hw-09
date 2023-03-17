@@ -12,7 +12,7 @@ function handleSubmit(event) {
 
   let position = 0;
   let delayNum = Number(delay.value);
-  let stepNum = Number(step.value);
+  const stepNum = Number(step.value);
 
   for (let i = 0; i < amount.value; i += 1) {
     position += 1;
