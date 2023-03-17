@@ -1,2 +1,0 @@
-!function(){var e=document.querySelector(".form");document.querySelector('input[name="delay"]'),document.querySelector('input[name="step"]'),document.querySelector('input[name="amount"]');function t(e,t){Math.random();return new Promise((function(e,n){setTimeout((function(){}),t.value)}))}e.addEventListener("submit",(function(e){e.preventDefault();for(var n=e.currentTarget.elements,u=n.delay,r=n.step,o=n.amount,a=0,m=0;m<o.value;m+=1)a+=1,u.value+=r.value,t(a,u.value)}))}();
-//# sourceMappingURL=03-promises.769ac783.js.map
