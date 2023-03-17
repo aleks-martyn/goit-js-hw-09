@@ -1,5 +1,6 @@
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
+import Notiflix from 'notiflix';
 
 const inputEl = document.querySelector('#datetime-picker');
 const buttonEl = document.querySelector('button[data-start]');
@@ -23,7 +24,7 @@ const options = {
     if (futureDate - startDate > 1000) {
       buttonEl.removeAttribute('disabled');
     } else {
-      alert('Please choose a date in the future');
+      Notiflix.Notify.failure('Please choose a date in the future');
     }
   },
 };
