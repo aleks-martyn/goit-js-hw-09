@@ -15,8 +15,16 @@ function handleSubmit(event) {
 
   for (let i = 0; i < amount.value; i += 1) {
     position += 1;
-    delay.value += step.value;
-    createPromise(position, delay.value);
+    console.log(Number(delay.value));
+    delay.value += Number(step.value);
+    console.log(delay.value);
+    createPromise(position, delay.value)
+      .then(({ position, delay }) => {
+        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+      })
+      .catch(({ position, delay }) => {
+        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+      });
   }
 }
 
