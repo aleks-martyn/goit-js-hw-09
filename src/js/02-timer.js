@@ -10,6 +10,7 @@ const minutesField = document.querySelector('span[data-minutes]');
 const secondsField = document.querySelector('span[data-seconds]');
 const startDate = Date.now();
 let futureDate = 0;
+const timerId = null;
 
 buttonEl.setAttribute('disabled', 'true');
 
@@ -34,8 +35,7 @@ flatpickr(inputEl, options);
 buttonEl.addEventListener('click', handleBtnClick);
 
 function handleBtnClick(event) {
-  let timerId = setInterval(timerHandler, 1000);
-  console.log(timerId);
+  timerId = setInterval(timerHandler, 1000);
   event.target.setAttribute('disabled', 'true');
 }
 
