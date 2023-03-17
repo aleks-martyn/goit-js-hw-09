@@ -15,6 +15,7 @@ function handleSubmit(event) {
 
   for (let i = 0; i < amount.value; i += 1) {
     position += 1;
+    delay.value += step.value;
     createPromise(position, delay);
   }
 }
