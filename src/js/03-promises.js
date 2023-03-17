@@ -16,15 +16,19 @@ function handleSubmit(event) {
   for (let i = 0; i < amount.value; i += 1) {
     position += 1;
     delay.value += step.value;
-    createPromise(position, delay);
+    createPromise(position, delay.value);
   }
 }
 
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
-  }
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        // Fulfill
+      } else {
+        // Reject
+      }
+    }, delay.value);
+  });
 }
